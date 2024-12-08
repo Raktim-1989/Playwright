@@ -22,7 +22,7 @@ const config = {
     headless : false,
     viewport : {width: 720, height: 720},
     screenshot : 'on',
-    trace : 'on',//off,on
+    trace : 'on',//off,on 
     },
   },
   {
@@ -33,7 +33,7 @@ use: {
   headless : false,
   screenshot : 'on',
   trace : 'on',//off,on
-  ...devices['iPhone 11']
+  ...devices['iPhone 11'] ,
   },
 }
 ]

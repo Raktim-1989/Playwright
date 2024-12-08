@@ -22,8 +22,8 @@ test('Place the order', async ({page})=>
         window.localStorage.setItem('token',value);
     }, response.token );
 await page.goto("https://rahulshettyacademy.com/client/");
- await page.locator("button[routerlink*='myorders']").click();
- await page.locator("tbody").waitFor();
+await page.locator("button[routerlink*='myorders']").click();
+await page.locator("tbody").waitFor();
 const rows = await page.locator("tbody tr");
 
 
@@ -44,3 +44,4 @@ expect(response.orderId.includes(orderIdDetails)).toBeTruthy();
 
 //Verify if order created is showing in history page
 // Precondition - create order -
+

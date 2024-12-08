@@ -1,5 +1,6 @@
    const {test,expect} = require('@playwright/test')
 
+test.describe.configure({mode : 'parallel'})
 
 test("Popup validations",async({page})=>
 {
@@ -11,7 +12,7 @@ test("Popup validations",async({page})=>
     await expect(page.locator("#displayed-text")).toBeVisible();
     await page.locator("#hide-textbox").click();
     await expect(page.locator("#displayed-text")).toBeHidden();
-   // await page.pause();
+   // await page.pause();`
     page.on('dialog',dialog => dialog.accept());
     await page.locator("#confirmbtn").click();
     await page.locator("#mousehover").hover();
@@ -19,8 +20,6 @@ test("Popup validations",async({page})=>
     await framesPage.locator("li a[href*='lifetime-access']:visible").click();
      const textCheck =await framesPage.locator(".text h2").textContent();
     console.log(textCheck.split(" ")[1]);
-
-
 })
 
 test("Screenshot & Visual comparision",async({page})=>

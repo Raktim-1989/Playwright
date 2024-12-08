@@ -18,13 +18,13 @@ test.beforeAll( async()=>
 test('Place the order', async ({page})=>
 {
     page.addInitScript(value => {
-
         window.localStorage.setItem('token',value);
     }, response.token );
 await page.goto("https://rahulshettyacademy.com/client/");
 
-
-await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/62026f4edfa52b09e0a20b18",
+//fake API & intercepting
+await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/62026f4edfa52b09e0a20b18"
+                    ,
 async route=>
 {
   const response =  await page.request.fetch(route.request());

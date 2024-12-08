@@ -15,10 +15,6 @@ test.beforeAll(async({browser})=>
     await page.waitForLoadState('networkidle');
     await context.storageState({path: 'state.json'});
     webContext=  await browser.newContext({storageState:'state.json'});
-
-
-
-
 })
 
 test('Client App login', async ()=>

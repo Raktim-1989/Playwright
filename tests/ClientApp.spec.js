@@ -34,7 +34,7 @@
     const bool =await page.locator("h3:has-text('Zara Coat 4')").isVisible();
     expect(bool).toBeTruthy();
     await page.locator("text=Checkout").click();
-    await page.locator("[placeholder*='Country']").type("ind",{delay:100});
+    await page.locator("[placeholder*='Country']").pressSequentially("ind");
     const dropdown = page.locator(".ta-results");
     await dropdown.waitFor();
     optionsCount = await dropdown.locator("button").count();

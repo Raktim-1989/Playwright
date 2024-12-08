@@ -1,7 +1,6 @@
  const {test, expect} = require('@playwright/test');
 
 
-
  //test.use({ browserName: 'webkit'});
  test('Browser Context-Validating Error login', async ({browser})=>
  {
@@ -71,7 +70,7 @@
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
     const documentLink = page.locator("[href*='documents-request']");
 
-   const [newPage] =await  Promise.all([
+   const [newPage] =await Promise.all([
 
     context.waitForEvent('page'),
     documentLink.click(),

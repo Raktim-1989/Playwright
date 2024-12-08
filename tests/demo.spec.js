@@ -6,8 +6,6 @@
  test.beforeAll( () => {
   console.log("i am the first");
   // mydata = await JSON.parse(JSON.stringify(require("./utils/data.json")));
-  
-
  })
  for (const data of dataset) {
 
